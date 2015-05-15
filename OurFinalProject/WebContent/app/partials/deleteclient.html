@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+ <link rel="stylesheet" type="text/css" href="app/css/mystyle2.css">
+</head>
+<body>
+
+<div class="c">
+ <form align ="center" ng-controller="clientController">
+                  <table align="center">
+               
+                        <tr><td>Enter Client Name :</td>
+                        
+                        <td><input type="text" ng-model="clientname" name="clientname"></td></tr>
+                       </table>
+                       <table align="center">
+                        <tr><td><input type="submit" value="Delete" ng-click="deleteClient(clientname)" name="deleteclient"></td>  </tr>
+                          
+                        </table>
+                        
+                        
+                        </form>
+                        </div>
+</body>
+</html>
+
+

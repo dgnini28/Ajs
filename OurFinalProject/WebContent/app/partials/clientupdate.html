@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Resource</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+ <link rel="stylesheet" type="text/css" href="app/css/mystyle.css">
+
+ 
+<!-- Angular JS library -->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+
+</head>
+<div>
+   <form name="myForm" ng-controller="clientController" ng-submit="updateClient(clientByName.clnt_name)">
+
+<div class="c">
+<h2 align="center">Client Update</h2>
+<table align="center">
+
+ <tr><td><label>Name </label></td>
+  <td> <input type="text" id="name" name="name" ng-model="clientByName.clnt_name" required/><label id="star" style="color: red">*</label></td></tr>
+   <tr><td colspan="2"><span ng-show="myForm.name.$error.required && myForm.name.$dirty">required</span></td></tr>
+  
+
+
+<tr><td>Address </td><td> <textarea id="address" name="address" placeholder="Enter Address"rows="4" column="9"ng-model="clientByName.clnt_address" required ></textarea><label id="star" style="color: red">*</label></td></tr>
+
+<tr><td colspan="2"><span ng-show="myForm.address.$error.required && myForm.address.$dirty">required</span></td></tr>
+  
+ <tr><td> <label>Email</label></td>
+   <td><input type="email" id="email" name="email" ng-model="clientByName.clnt_email" required/><label id="star" style="color: red">*</label></td></tr>
+    <tr><td colspan="2"><span ng-show="myForm.email.$error.required && myForm.email.$dirty">required</span>
+   <span ng-show="!myForm.email.$error.required && myForm.email.$error.email && myForm.email.$dirty">invalid email</span>
+      </td></tr> 
+      
+<tr><td>Domain</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <td><select id="domain" ng-model="clientByName.clnt_domain">
+<option value="java">JAVA</option>
+<option value="c">C</option>
+<option value="c++">C++</option>
+<option value="Angular JS">Angular JS</option>
+</select></td></tr><br><br>
+
+<tr><td>Revenue</td><td> <input type="text" id="revenue" ng-model="clientByName.clnt_revenue" placeholder="Enter Revenue" ></td></tr>
+<tr><td>Employees </td><td><input type="text" id="employees" placeholder="Enter Number of Employees" ng-model="clientByName.clnt_empnum" ></td></tr>
+
+<tr><td>CEO</td><td> <input type="text" id="ceo" placeholder="Enter CEO" ng-model="clientByName.clnt_ceo"></td></tr>
+
+
+<tr><td>Contact </td><td> <input type="text" id="contact" name="contact" ng-model="clientByName.clnt_contact"  placeholder="Enter Contact" required><label id="star" style="color: red">*</label></td></tr>
+ <tr><td colspan="2"><span ng-show="myForm.contact.$error.required && myForm.contact.$dirty">required</span></td></tr>
+
+<tr><td>Offices </td><td><input type="text" id="offices" placeholder="Enter Offices" ng-model="clientByName.clnt_offices"></td></tr>
+
+
+
+<tr><td>Status</td><td> <select id="status" ng-model="clientByName.clnt_status">
+<option value="final">Final</option>
+<option value="not_mentioned">Not Mentioned</option>
+</select></td></tr>
+</table>
+ <table align="center">
+  <tr><td><input type="submit" value="Update" name="submit"  ng-disabled="!myForm.$valid"></td>
+  <td><input type="reset" value="Reset" name="reset" ng-disabled="!myForm.$valid"></td></tr>
+  </table> 
+  
+  
+  </div>
+</form>
+
+</div>
+
+</body>
+<script src="..//js/login.js">
+  
+</script>
+   
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Resource</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+ <link rel="stylesheet" type="text/css" href="app/css/mystyle.css">
+
+ 
+<!-- Angular JS library -->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+
+</head>
+<body>
+<div >
+   <form name="myForm" ng-controller="userController">
+
+    <div class="c">
+  <h2 align="center">User Updation</h2>
+   <table  align = "center">
+   
+  <tr><td><label>User Id </label></td>
+  <td> <input type="number" id="id" name="name" disabled ng-model="userByid.user_id" required/><label id="star" style="color: red">*</label></td></tr>
+   <tr><td colspan="2"><span ng-show="myForm.name.$error.required && myForm.name.$dirty">required</span></td></tr>
+         
+   
+    <tr><td><label>Username</label></td>
+       <td><input type="text" id="username" name="username" ng-model="userByid.user_name" ng-minlength="5" ng-maxlength="20" ng-pattern="/^[A-z][A-z0-9]*$/" required /><label id="star" style="color: red">*</label></td></tr>
+  <tr><td colspan="2"> <span  ng-show="myForm.username.$error.required && myForm.username.$dirty">* required</span>
+   <span  ng-show="!myForm.username.$error.minLength && !myForm.username.$error.maxLength && myForm.username.$error.pattern && myForm.username.$dirty">* Must start with a letter</span>
+   <span ng-show="!myForm.username.$error.required && (myForm.username.$error.minlength || myForm.username.$error.maxlength) && myForm.username.$dirty">* Must be between 5 and 20 characters.</span>
+      </td></tr>
+
+    <tr><td> <label>Email</label></td>
+   <td><input type="email" id="email" name="email" ng-model="userByid.user_email" required/><label id="star" style="color: red">*</label></td></tr>
+    <tr><td colspan="2"><span ng-show="myForm.email.$error.required && myForm.email.$dirty">required</span>
+   <span ng-show="!myForm.email.$error.required && myForm.email.$error.email && myForm.email.$dirty">invalid email</span>
+      </td></tr> 
+      
+
+       
+      <tr><td> <label>Password</label></td>
+      <td> <input type="password" id="password" name="password" ng-model="userByid.user_pass" ng-minlength="8" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" required  /><label id="star" style="color: red">*</label></td></tr>
+  <tr><td colspan="2"> <span ng-show="myForm.password.$error.required && myForm.password.$dirty">required</span>
+   <span ng-show="!myForm.password.$error.required && (myForm.password.$error.minlength || myForm.password.$error.maxlength) && myForm.password.$dirty">Must be between 8 and 20 characters.</span>
+   <span ng-show="!myForm.password.$error.required && !myForm.password.$error.minlength && !myForm.password.$error.maxlength && myForm.password.$error.pattern && myForm.password.$dirty">Must be alphanumeric</span>
+       </td></tr>
+       
+       
+      
+       
+       
+       </table>
+      
+       <table align="center">
+ <tr><td> <button type="submit" class="btn" ng-disabled="!myForm.$valid">Update</button></td></tr>
+ 
+  </table> 
+  
+  
+  </div>
+	</form>
+   </div>
+   </body>
+   
+   <script src="app/js/login.js">
+  
+</script>
+   </html>

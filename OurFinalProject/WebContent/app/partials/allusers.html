@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="app/css/mystyle2.css">
+</head>
+<body ng-app="myapp">
+  <form ng-controller="userController" >
+                        <div class="c">
+                     
+                        <h3 align="center">Registered Users</h3>
+                        <button ng-click="viewAllUser()">View All User</button>
+                       
+                    <table width=100% border="3">
+                        <tr>
+                  
+                    <td ng-click="predicate = 'user_id'; reverse=false">ID</td>
+                    <td ng-click="predicate = 'user_name'; reverse=false"> Username</td>
+                      
+                        <td ng-click="predicate = 'user_pass'; reverse=false">Password</td>
+                          <td ng-click="predicate = 'user_email'; reverse=false">Email ID</td>
+               
+          
+              </tr>
+                    <tr ng-repeat="user in UserList | orderBy:predicate:reverse">
+                    <td>  {{user.user_id}}   </td>
+                    <td>          {{user.user_name}}    </td>
+                    <td>         {{user.user_pass}} </td>
+                    <td>             {{user.user_email}} </td>
+                    
+                    
+                    
+                    </tr>
+ 
+                    </table>
+                      
+          
+                       
+    </div>                
+</form> 
+
+</body>
+</html>

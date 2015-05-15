@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+
+<link rel="stylesheet" type="text/css" href="..//css/mystyle2.css">
+</head>
+<body ng-app="myapp" >
+     <form ng-controller="clientController">
+                        <div class="c">
+                     
+                        <h3 align="center">Registered Clients</h3>
+                       <button type="button" ng-click="viewAllClients()"> View All!</button>
+                    <table width=100% border="3">
+                    <tr>
+                  
+                    
+                    <td  ng-click="predicate = 'clnt_name'; reverse=false"> Name</td>
+                     <td ng-click="predicate = 'clnt_address'; reverse=false">Address</td>
+                        <td  ng-click="predicate = 'clnt_email'; reverse=false">Email ID</td>
+                          <td ng-click="predicate = 'clnt_domain'; reverse=false">Domain</td>
+                   
+                     <td ng-click="predicate = 'clnt_revenue'; reverse=false">Revenue</td>
+                     <td  ng-click="predicate = 'clnt_empnum'; reverse=false">Employees</td>
+                      <td  ng-click="predicate = 'clnt_ceo'; reverse=false">CEO</td>
+                         <td  ng-click="predicate = 'clnt_contact'; reverse=false">Contact</td>
+                      
+                        <td ng-click="predicate = 'clnt_offices'; reverse=false">Offices </td>
+                 <td ng-click="predicate = 'clnt_status'; reverse=false">Status </td>
+          
+              </tr>
+                   <tr ng-repeat="client	in clientList | orderBy:predicate:reverse">
+                   <td>{{client.clnt_name}}</td>
+               <td>{{client.clnt_address}}</td>
+ 				<td>{{client.clnt_email}}</td>
+ 				<td>{{client.clnt_domain}}</td>
+ 				<td>{{client.clnt_revenue}}</td>
+ 				<td>{{client.clnt_empnum}}</td>
+ 				<td>{{client.clnt_ceo}}</td>
+ 				<td>{{client.clnt_contact}}</td>
+				<td>{{client.clnt_offices}}</td>
+				<td>{{client.clnt_status}}</td>
+                 </tr>
+                 </table>
+                      
+          
+                       
+    </div>                
+</form> 
+
+</body>
+</html> 
